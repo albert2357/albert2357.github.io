@@ -1,1 +1,69 @@
-123
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    <title>KMA天气图</title>
+    <style>#header a{padding-left:1%}#footer a{padding-right:1%}#footer{text-align:center}</style>
+    <meta name="keywords" content="KMA天气图">
+  </head>
+  <body>
+    <h2 style="text-align: center;">KMA天气图</h2>
+    <div><br>
+    </div>
+    <div>日期：<input id="date" type="date"> 时次：
+      <select id="hh">
+        <option value="02">02</option>
+        <option value="08">08</option>
+        <option value="14">14</option>
+        <option value="20">20</option>
+      </select>
+      Hpa：
+      <select id="hpa">
+        <option value="up50">500</option>
+        <option value="up70">700</option>
+        <option value="up85">850</option>
+        <option value="up92">925</option>
+        <option value="sfc3">000</option>
+        <option value="up30">300</option>
+        <option value="up20">200</option>
+        <option value="up10">100</option>
+      </select>
+      <a href="#" onclick="reloadPic()">载入图片</a> &nbsp; <a href="#" onclick="last_next(-1)">上
+        一张</a> &nbsp; <a href="#" onclick="last_next(1)">下一张</a> &nbsp; <a href="#"
+
+        onclick="startPic()" id="run">从当前选择时间开始动画</a> <a href="#" onclick="endPic()"
+
+        id="stop" style="display: none"> 结束动画</a> </div>
+    <br>
+    <img id="pic" alt="Weather Chart">
+    <hr>
+    <p>
+      <script>function loadPic(){var d,e,f,g,h,a=new Date,b=a.getFullYear(),c=a.getMonth()+1;10>c&&(c='0'+c),d=a.getDate(),10>d&&(d='0'+d),e=b+'-'+c+'-'+d,f=a.getHours(),f>=23?f='20':f>=17?f='14':f>=11?f='08':f>=5?f='02':(f='20',g=chTime(e+'00',-4),e=g.substr(0,4)+'-'+g.substr(4,2)+'-'+g.substr(6,2)),document.getElementById('hh').value=f,document.getElementById('date').value=e,h=chTime(e+f,-8),document.getElementById('pic').src='http://web.kma.go.kr/repositary/image/cht/img/up50_'+h+'.png'}function reloadPic(){var a=document.getElementById('date').value,b=document.getElementById('hh').value,c=chTime(a+b,-8),d=document.getElementById('hpa').value;document.getElementById('pic').src='http://web.kma.go.kr/repositary/image/cht/img/'+d+'_'+c+'.png'}function last_next(a){var f,b=0>a?-6:6,c=document.getElementById('date').value,d=document.getElementById('hh').value,e=chTime(c+d,b);document.getElementById('date').value=e.substr(0,4)+'-'+e.substr(4,2)+'-'+e.substr(6,2),document.getElementById('hh').value=e.substr(8,2),f=document.getElementById('hpa').value,e=chTime(c+d,b-8),document.getElementById('pic').src='http://web.kma.go.kr/repositary/image/cht/img/'+f+'_'+e+'.png'}function chTime(a,b){var c=parseInt(a.substr(0,4)),d=parseInt(a.substr(5,2))-1,e=parseInt(a.substr(8,2)),f=parseInt(a.substr(10,2)),g=new Date(c,d,e,f+b);return c=g.getFullYear(),d=g.getMonth()+1,e=g.getDate(),f=g.getHours(),d=d>=10?d:'0'+d,e=e>=10?e:'0'+e,f=f>=10?f:'0'+f,c+''+d+e+f}function startPic(){reloadPic(),document.getElementById('run').style.display='none',document.getElementById('stop').style.display='inline',intPic=setInterval(function(){var a,b,c,d;return document.getElementById('run').href='#',a=document.getElementById('date').value.split('-'),b=document.getElementById('hh').value,c=(new Date).getTime(),d=new Date(a[0],a[1]-1,a[2],parseInt(b)).getTime(),324e5>c-d?(document.getElementById('run').style.display='inline',document.getElementById('stop').style.display='none',window.clearInterval(intPic),void 0):(last_next(1),void 0)},2e3)}function endPic(){document.getElementById('run').style.display='inline',document.getElementById('stop').style.display='none',clearInterval(intPic)}window.onload=loadPic</script>
+    </p>
+    <p><br>
+    </p>
+    <p>网页非原创，原帖：<br>
+      <a href="https://www.cnblogs.com/aeropig/p/kma_weather_chart.html" target="_blank">
+        便捷访问KMA天气图 - 西安气象爱好者</a> </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p style="text-align: center;"><a href="https://albert2357.github.io/" target="_blank">
+        主页</a> | <a href="https://albert2357.github.io/site-map.html" target="_blank">
+        网站地图</a> </p>
+    <h5 style=" text-align: center;">更新时间：2023.10.01</h5>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><a href="https://www.cnblogs.com/aeropig/p/kma_weather_chart.html"> </a>
+    </p>
+  </body>
+</html>
+
