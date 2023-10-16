@@ -63,7 +63,7 @@
 #### 四、关于作者 
 
 ​        一名气象爱好者，利用休息时间建设此网站，为爱发电。     
-​        联系方式：邮箱：albert2357@qq.com， [qq](https://wpa.qq.com/msgrd?v=3&uin=1059908108&site=qq&menu=yes&jumpflag=1)（点击跳转）。                      
+​        联系方式：邮箱albert2357@qq.com， [qq](https://wpa.qq.com/msgrd?v=3&uin=1059908108&site=qq&menu=yes&jumpflag=1)（点击跳转）。                      
 
 
 
